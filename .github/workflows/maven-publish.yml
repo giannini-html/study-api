@@ -2,7 +2,7 @@ name: Building
 
 on:
   push:
-    branches: [ "aula" ]
+    branches: [ "main" ]
  
 jobs:
   build:
@@ -14,6 +14,6 @@ jobs:
     - name: docker login
       run: docker login -u gianninidoc -p dckr_pat_aJwDJa1e8dNDHUtpBjq0IzjXcfI
     - name: build image
-      run: docker build -t gianninidoc/ping .
+      run: docker build -t gianninidoc/study-api .
     - name: push to docker
-      run: docker push gianninidoc/ping
+      run: docker push gianninidoc/study-api
