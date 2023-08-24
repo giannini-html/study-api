@@ -12,6 +12,7 @@
 	<artifactId>study-api</artifactId>
 	<version>1.0</version>
 	<name>study-api</name>
+	<packaging>jar</packaging>
 	<description>Aplicação de estudo de API com Spring</description>
 	<properties>
 		<java.version>8</java.version>
