@@ -1,0 +1,19 @@
+name: Building
+
+on:
+  push:
+    branches: [ "aula" ]
+ 
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: docker login
+      run: docker login -u gianninidoc -p dckr_pat_aJwDJa1e8dNDHUtpBjq0IzjXcfI
+    - name: build image
+      run: docker build -t gianninidoc/ping .
+    - name: push to docker
+      run: docker push gianninidoc/ping
