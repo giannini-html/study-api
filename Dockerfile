@@ -12,7 +12,7 @@ FROM adoptopenjdk/openjdk11:jre-11.0.15_10-alpine
 
 RUN mkdir /app
 
-COPY --from=build /project/target/app.war /app/app.war
+COPY --from=build /project/main/app.war /app/app.war
 
 WORKDIR /app
 
