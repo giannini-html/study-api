@@ -12,8 +12,8 @@ FROM adoptopenjdk/openjdk11:jre-11.0.15_10-alpine
 
 RUN mkdir /app
 
-COPY --from=build /project/target/study-api.war /app/study-api.war
+COPY --from=build /project/target/app.war /app/app.war
 
 WORKDIR /app
 
-CMD java $JAVA_OPTS -jar study-api.war
+CMD java $JAVA_OPTS -jar app.war
