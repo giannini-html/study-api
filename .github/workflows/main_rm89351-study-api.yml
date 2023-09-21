@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_ca48fff8d6b74b0086d8d133a38303f2 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_bbe3a856ff1041ea9310a8fe20750625 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_1ccdcdacf1a44f52beea289a54b3a633 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_3ed3b7ef214c459e81dce5da758dda29 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_ca48fff8d6b74b0086d8d133a38303f2 }}/gianninidoc/study-api:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_1ccdcdacf1a44f52beea289a54b3a633 }}/study-api:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'rm89351-study-api'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_445f11c1013e44c5a074048ab4a460fd }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_ca48fff8d6b74b0086d8d133a38303f2 }}/gianninidoc/study-api:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_c829430e1e514e4ab0c72b82667c7ef6 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_1ccdcdacf1a44f52beea289a54b3a633 }}/study-api:${{ github.sha }}'
